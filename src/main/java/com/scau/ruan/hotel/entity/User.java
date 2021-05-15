@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author bangtidy
@@ -53,4 +53,8 @@ public class User implements Serializable {
     private String inviteCode;
 
 
+    @Override
+    public String toString(){
+       return String.valueOf("log: userId = "+userId+", userName = "+userName+", password = "+userPassword+", email = "+email);
+    }
 }

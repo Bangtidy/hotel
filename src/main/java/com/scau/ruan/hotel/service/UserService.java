@@ -16,4 +16,13 @@ public interface UserService extends IService<User> {
 
     Result login(User user);
 
+    Result register(String userName,String password,String passwordAgain,String email);
+
+    int addUser(User user);
+
+    int addUser(String userName,String password,String email,String activeCode);
+
+    Result activate(String code);
+
+    int update(User user);
 }

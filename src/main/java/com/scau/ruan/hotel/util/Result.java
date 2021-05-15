@@ -34,6 +34,15 @@ public class Result {
         return r;
     }
 
+    //成功码200静态方法
+    public static Result success200(String messageParam) {
+        Result r = new Result();
+        r.setSuccess(true);
+        r.setCode(ResultCode.SUCCESS_ORDINARY);
+        r.setMessage(messageParam);
+        return r;
+    }
+
     //失败静态方法
     public static Result error() {
         Result r = new Result();

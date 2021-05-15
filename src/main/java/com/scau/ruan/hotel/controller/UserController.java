@@ -6,7 +6,12 @@ import com.scau.ruan.hotel.entity.User;
 import com.scau.ruan.hotel.service.UserService;
 import com.scau.ruan.hotel.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+import java.util.Random;
 
 /**
  * <p>
@@ -19,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/hotel/user")
 @CrossOrigin
+@Controller
 public class UserController {
 
     @Autowired
@@ -31,5 +37,25 @@ public class UserController {
     }
 
 
+    @GetMapping("register")
+    public String goRegisterPage(){
+        return "register";
+    }
+
+
+    @PostMapping("register")
+    public Result index(@RequestParam("userName") String userName,
+                        @RequestParam("password") String password,
+                        @RequestParam("passwordAgain") String passwordAgain,
+                        @RequestParam("email") String email,
+                        Model model){
+            return userService.register(userName,password,passwordAgain,email);
+    }
+
+    @GetMapping("activate")
+    public Result activate(@RequestParam(value = "code") String code){
+
+        return userService.activate(code);
+    }
 }
 
