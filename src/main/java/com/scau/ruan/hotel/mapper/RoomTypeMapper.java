@@ -2,6 +2,7 @@ package com.scau.ruan.hotel.mapper;
 
 import com.scau.ruan.hotel.entity.RoomType;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author bangtidy
  * @since 2021-05-13
  */
+@Mapper
 public interface RoomTypeMapper extends BaseMapper<RoomType> {
 
 }

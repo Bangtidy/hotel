@@ -26,7 +26,7 @@ public class Room implements Serializable {
     private static final long serialVersionUID=1L;
 
     @ApiModelProperty(value = "房间号")
-    @TableId(value = "room_id", type = IdType.AUTO)
+    @TableId(value = "room_id", type = IdType.NONE)
     private Integer roomId;
 
     @ApiModelProperty(value = "房间类型")

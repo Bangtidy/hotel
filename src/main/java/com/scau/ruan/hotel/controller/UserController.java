@@ -1,9 +1,12 @@
 package com.scau.ruan.hotel.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import com.baomidou.mybatisplus.extension.api.R;
+import com.scau.ruan.hotel.entity.User;
+import com.scau.ruan.hotel.service.UserService;
+import com.scau.ruan.hotel.util.Result;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -15,7 +18,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/hotel/user")
+@CrossOrigin
 public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    //登录
+    @PostMapping("login")
+    public Result login(@RequestBody User user){
+        return userService.login(user);
+    }
+
 
 }
 

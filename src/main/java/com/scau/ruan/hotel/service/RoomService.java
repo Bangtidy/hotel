@@ -3,6 +3,8 @@ package com.scau.ruan.hotel.service;
 import com.scau.ruan.hotel.entity.Room;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface RoomService extends IService<Room> {
 
+    boolean addroom(Room room);
+
+
+    List<Room> getRoomByTypeId(int typeId);
 }
