@@ -132,5 +132,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return baseMapper.updateById(user);
     }
 
+    @Override
+    public Result checkEmail(String email) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("email",email);
+        User dbUser = baseMapper.selectOne(wrapper);
+        if (dbUser==null){
+            return Result.success200("该邮箱可用");
+        }else {
+            return Result.error().message("该邮箱已被注册");
+        }
+
+    }
+
 
 }

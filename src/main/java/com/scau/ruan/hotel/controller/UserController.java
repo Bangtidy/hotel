@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -44,12 +45,23 @@ public class UserController {
 
 
     @PostMapping("register")
-    public Result index(@RequestParam("userName") String userName,
-                        @RequestParam("password") String password,
-                        @RequestParam("passwordAgain") String passwordAgain,
-                        @RequestParam("email") String email,
-                        Model model){
+    public Result index(@RequestBody Map<String, String> form){
+
+//        @RequestParam("userName") String userName,
+//        @RequestParam("password") String password,
+//        @RequestParam("passwordAgain") String passwordAgain,
+//        @RequestParam("email") String email
+        String userName = form.get("userName");
+        String password = form.get("password");
+        String passwordAgain = form.get("passwordAgain");
+        String email = form.get("email");
             return userService.register(userName,password,passwordAgain,email);
+    }
+
+    @PostMapping("checkEmail")
+    public Result checkEmail(@RequestParam("email") String email,
+                        Model model){
+        return userService.checkEmail(email);
     }
 
     @GetMapping("activate")

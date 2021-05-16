@@ -25,4 +25,6 @@ public interface UserService extends IService<User> {
     Result activate(String code);
 
     int update(User user);
+
+    Result checkEmail(String email);
 }
