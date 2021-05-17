@@ -1,8 +1,12 @@
 package com.scau.ruan.hotel.entity;
 
 import java.math.BigDecimal;
+
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -17,13 +21,13 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author bangtidy
- * @since 2021-05-13
+ * @since 2021-05-16
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="Order对象", description="")
-public class Order implements Serializable {
+@ApiModel(value="HOrder对象", description="")
+public class HOrder implements Serializable {
 
     private static final long serialVersionUID=1L;
 
@@ -41,9 +45,11 @@ public class Order implements Serializable {
     private String buyerPhone;
 
     @ApiModelProperty(value = "订单创建时间")
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
     @ApiModelProperty(value = "订单修改时间")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date updateTime;
 
     @ApiModelProperty(value = "总金额")

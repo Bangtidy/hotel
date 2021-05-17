@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface RoomTypeService extends IService<RoomType> {
 
+    boolean addRoomType(RoomType roomType);
 }

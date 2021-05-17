@@ -1,6 +1,6 @@
 package com.scau.ruan.hotel.mapper;
 
-import com.scau.ruan.hotel.entity.Order;
+import com.scau.ruan.hotel.entity.HOrder;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,9 +10,9 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author bangtidy
- * @since 2021-05-13
+ * @since 2021-05-16
  */
 @Mapper
-public interface OrderMapper extends BaseMapper<Order> {
+public interface HOrderMapper extends BaseMapper<HOrder> {
 
 }
