@@ -10,6 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.Map;
 import java.util.Random;
@@ -33,7 +36,10 @@ public class UserController {
 
     //登录
     @PostMapping("login")
-    public Result login(@RequestBody User user){
+    public Result login(@RequestBody Map<String, String> form){
+        User user = new User();
+        user.setEmail(form.get("email"));
+        user.setUserPassword(form.get("password"));
         return userService.login(user);
     }
 
@@ -65,8 +71,7 @@ public class UserController {
     }
 
     @GetMapping("activate")
-    public Result activate(@RequestParam(value = "code") String code){
-
+    public Result activate(@RequestParam(value = "code") String code, HttpServletResponse resp){
         return userService.activate(code);
     }
 }

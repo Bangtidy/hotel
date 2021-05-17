@@ -41,7 +41,7 @@ public class MailTask implements Runnable {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("<html><head></head><body>"
                         +"您好，感谢您的注册，这是一封验证邮件，请");
-                stringBuilder.append("<a href=" + domainName + "/activate?code=");
+                stringBuilder.append("<a href=" + domainName + "?code=");
                 stringBuilder.append(code);
                 stringBuilder.append(">点击即可完成激活</a>，感谢您的支持！</body>");
                 mimeMessageHelper.setText(stringBuilder.toString(), true);

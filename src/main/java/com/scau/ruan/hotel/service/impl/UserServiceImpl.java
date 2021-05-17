@@ -14,9 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -60,7 +65,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             return Result.error().message("登录失败");
         }
 
-        return Result.ok();
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+                .getRequest();
+        String token = request.getHeader("token");
+        Map<String, Object> tokenMap = new HashMap<>();
+        tokenMap.put("token",token);
+        return Result.ok().data(tokenMap);
     }
 
     @Override
