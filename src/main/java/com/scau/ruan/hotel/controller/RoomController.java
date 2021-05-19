@@ -72,5 +72,11 @@ public class RoomController {
         }
     }
 
+    //客房类型统计
+    @GetMapping("getTypeStatistics")
+    public Result getTypeStatistics(){
+        return roomService.getTypeStatistics();
+    }
+
 }
 

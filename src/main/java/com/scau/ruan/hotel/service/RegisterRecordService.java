@@ -2,6 +2,7 @@ package com.scau.ruan.hotel.service;
 
 import com.scau.ruan.hotel.entity.RegisterRecord;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.scau.ruan.hotel.entity.VO.RegisterIn;
 
 /**
  * <p>
@@ -13,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface RegisterRecordService extends IService<RegisterRecord> {
 
+    boolean regisiterIn(RegisterIn registerIn);
+
+    RegisterRecord regisiterOut(Integer registerRecordId);
 }

@@ -26,4 +26,6 @@ public interface HOrderService extends IService<HOrder> {
     List<OrderInfo> getAllOrder();
 
     boolean updateOrderInfoById(OrderInfo orderInfo);
+
+    Boolean checkFinsh(HOrder order);
 }

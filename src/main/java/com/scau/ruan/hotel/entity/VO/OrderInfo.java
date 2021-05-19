@@ -5,6 +5,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
 
 @Data
 public class OrderInfo {
@@ -32,5 +34,8 @@ public class OrderInfo {
 
     @ApiModelProperty(value = "订单详情数组")
     private OrderDetail[] orderDetails;
+
+    @ApiModelProperty(value = "房间类型和房间数量")
+    private List<HashMap<String,Integer>> list;
 
 }

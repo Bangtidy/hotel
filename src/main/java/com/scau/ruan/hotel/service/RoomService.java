@@ -2,6 +2,7 @@ package com.scau.ruan.hotel.service;
 
 import com.scau.ruan.hotel.entity.Room;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.scau.ruan.hotel.util.Result;
 
 import java.util.List;
 
@@ -19,4 +20,7 @@ public interface RoomService extends IService<Room> {
 
 
     List<Room> getRoomByTypeId(int typeId);
+
+    Result getTypeStatistics();
+
 }

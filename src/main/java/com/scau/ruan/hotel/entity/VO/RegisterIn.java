@@ -1,34 +1,19 @@
-package com.scau.ruan.hotel.entity;
+package com.scau.ruan.hotel.entity.VO;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-/**
- * <p>
- * 
- * </p>
- *
- * @author bangtidy
- * @since 2021-05-13
- */
+import java.io.Serializable;
+import java.util.Date;
+
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-@ApiModel(value="RegisterRecord对象", description="")
-public class RegisterRecord implements Serializable {
 
-    private static final long serialVersionUID=1L;
-
-    @ApiModelProperty(value = "登记id")
-    @TableId(value = "register_id", type = IdType.AUTO)
-    private Integer registerId;
+public class RegisterIn implements Serializable {
 
     @ApiModelProperty(value = "明细id")
     private Integer detailId;
@@ -44,10 +29,5 @@ public class RegisterRecord implements Serializable {
 
     @ApiModelProperty(value = "入住时间")
     private Date registerTime;
-
-    @ApiModelProperty(value = "退房时间")
-    private Date checkoutTime;
-
-
 
 }
