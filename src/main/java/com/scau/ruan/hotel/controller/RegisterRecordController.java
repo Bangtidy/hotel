@@ -40,9 +40,9 @@ public class RegisterRecordController {
 
 
     //退房
-    @PostMapping("registerOut/{registerRecordId}")
-    public Result registerOut(@PathVariable Integer registerRecordId){
-        RegisterRecord registerRecord = registerRecordService.regisiterOut(registerRecordId);
+    @PostMapping("registerOut/{roomId}")
+    public Result registerOut(@PathVariable Integer roomId){
+        RegisterRecord registerRecord = registerRecordService.regisiterOut(roomId);
         return Result.ok().data("registerRecord",registerRecord);
     }
 

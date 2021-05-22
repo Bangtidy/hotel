@@ -37,7 +37,7 @@ public class MailTask implements Runnable {
                 MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage,true,"UTF-8");
                 mimeMessageHelper.setFrom(mailFrom);
                 mimeMessageHelper.setTo(email);
-                mimeMessageHelper.setSubject("来自addressbook的一封激活邮件");
+                mimeMessageHelper.setSubject("来自2021春大三下课程设计酒店信息管理系统的一封激活邮件");
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append("<html><head></head><body>"
                         +"您好，感谢您的注册，这是一封验证邮件，请");

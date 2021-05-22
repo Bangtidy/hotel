@@ -49,8 +49,8 @@ public class RegisterRecordServiceImpl extends ServiceImpl<RegisterRecordMapper,
 
     //退房
     @Override
-    public RegisterRecord regisiterOut(Integer registerRecordId) {
-        RegisterRecord registerRecord = baseMapper.selectById(registerRecordId);
+    public RegisterRecord regisiterOut(Integer pRoomId) {
+        RegisterRecord registerRecord = baseMapper.selectById(pRoomId);
         //设置退房时间
         registerRecord.setCheckoutTime(new Date());
 
